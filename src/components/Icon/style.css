@@ -1,0 +1,16 @@
+.hc-icon {
+    --hc-icon-color: inherit;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    fill: currentColor;
+    color: var(--hc-icon-color);
+    font-size: inherit;
+  }
+
+  @each $val in primary,info,success,warning,danger{
+    .hc-icon--$(val){
+        --hc-icon-color:var(--hc-color-$(val))
+    }
+  }

@@ -1,0 +1,65 @@
+:root {
+  /* colors */
+  --hc-color-white: #ffffff;
+  --hc-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+
+  @each $val, $color in var(--colors) {
+    --hc-color-$(val): $(color);
+    @for $i from 3 to 9 by 2 {
+      --hc-color-$(val)-light-$(i): mix(#fff, $(color), .$(i));
+    }
+    --hc-color-$(val)-light-8: mix(#fff, $(color), 0.8);
+    --hc-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+    
+    --hc-bg-color: #ffffff;
+    --hc-bg-color-page: #f2f3f5;
+    --hc-bg-color-overlay: #ffffff;
+    --hc-text-color-primary: #303133;
+    --hc-text-color-regular: #606266;
+    --hc-text-color-secondary: #909399;
+    --hc-text-color-placeholder: #a8abb2;
+    --hc-text-color-disabled: #c0c4cc;
+    --hc-border-color: #dcdfe6;
+    --hc-border-color-light: #e4e7ed;
+    --hc-border-color-lighter: #ebeef5;
+    --hc-border-color-extra-light: #f2f6fc;
+    --hc-border-color-dark: #d4d7de;
+    --hc-border-color-darker: #cdd0d6;
+    --hc-fill-color: #f0f2f5;
+    --hc-fill-color-light: #f5f7fa;
+    --hc-fill-color-lighter: #fafafa;
+    --hc-fill-color-extra-light: #fafcff;
+    --hc-fill-color-dark: #ebedf0;
+    --hc-fill-color-darker: #e6e8eb;
+    --hc-fill-color-blank: #ffffff;
+
+    /* border */
+    --hc-border-width: 1px;
+    --hc-border-style: solid;
+    --hc-border-color-hover: var(--hc-text-color-disabled);
+    --hc-border: var(--hc-border-width) var(--hc-border-style) var(--hc-border-color-hover);
+    --hc-border-radius-small: 2px;
+    --hc-border-radius-round: 20px;
+    --hc-border-radius-circle: 100%;
+
+    /* font */
+    --hc-font-size-extra-large: 20px;
+    --hc-font-size-large: 18px;
+    --hc-font-size-medium: 16px;
+    --hc-font-size-base: 14px;
+    --hc-font-size-small: 13px;
+    --hc-font-size-extra-small: 12px;
+    --hc-font-family: 'Helvetica Neue';
+    --hc-font-weight-primarv: 500;
+
+    /* disabled */
+    --hc-disabled-bg-color: var(--hc-fill-color-light);
+    --hc-disabled-text-color: var(--hc-text-color-placeholder);
+    --hc-disabled-border-color: var(--hc-border-color-light);
+
+    /* animation */
+    --hc-transition-duration: 0.3s;
+    --hc-transition-duration-fast: 0.2s;
+  }
+}

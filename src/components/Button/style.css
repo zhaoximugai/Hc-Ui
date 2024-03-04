@@ -1,0 +1,136 @@
+.hc-button {
+  --hc-button-font-weight: var(--hc-font-weight-primary);
+  --hc-button-border-color: var(--hc-border-color);
+  --hc-button-bg-color: var(-- hc-fill-color-blank);
+  --hc-button-text-color: var(--hc-text-color-regular);
+  --hc-button-disabled-text-color: var(--hc-disabled-text-color);
+  --hc-button-disabled-bg-color: var(--hc-fill-color-blank);
+  --hc-button-disabled-border-color: var(--hc-border-color-light);
+  --hc-button-hover-text-color: var(--hc-color-primary);
+  --hc-button-hover-bg-color: var(--hc-color-primary-light-9);
+  --hc-button-hover-border-color: var(--hc-color-primary-light-7);
+  --hc-button-active-text-color: var(--hc-button-hover-text-color);
+  --hc-button-active-border-color: var(--hc-color-primary);
+  --hc-button-active-bg-color: var(--hc-button-hover-bg-color);
+  --hc-button-outline-color: var(--hc-color-primary-light-5);
+  --hc-button-active-color: var(--hc-text-color-primary);
+}
+
+.hc-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--hc-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--hc-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--hc-button-bg-color);
+  border: var(--hc-border);
+  border-color: var(--hc-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--hc-font-size-base);
+  border-radius: var(--hc-border-radius-base);
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--hc-button-hover-text-color);
+    border-color: var(--hc-button-hover-bg-color);
+    background-color: var(--hc-button-hover-bg-color);
+  }
+
+  &:active {
+    color: var(--hc-button-active-text-color);
+    border-color: var(--hc-button-active-border-color);
+    background-color: var(--hc-button-active-bg-color);
+    outline: none;
+  }
+
+  &.plain {
+    --hc-button-hover-text-color: var(--hc-color-primary);
+    --hc-button-hover-bg-color: var(--hc-fill-color-blank);
+    --hc-button-hover-border-color: var(-hc-color-primary);
+  }
+
+  &.round {
+    border-radius: var(--hc-border-radius-round);
+  }
+
+  &.circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus,
+  &[disabled],
+  &[disabled] :hover,
+  &[disabled]:focus {
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--hc-button-disabled-bg-color);
+    border-color: var(--hc-button-disabled-border-color);
+  }
+  [class*=hc-icon]+span{
+    margin-left: 6px;
+  }
+}
+
+@each $val in primary, success, warning, info, danger {
+  .hc-button--$(val) {
+    --hc-button-text-color: var(--hc-color-white);
+    --hc-button-bg-color: var(--hc-color-$(val));
+    --hc-button-border-color: var(--hc-color-$(val));
+    --hc-button-outline-color: var(--hc-color-$(val)-light-5);
+    --hc-button-active-color: var(--hc-color-$(val)-dark-2);
+    --hc-button-hover-text-color: var(--hc-color-white);
+    --hc-button-hover-bg-color: var(--hc-color-$(val)-light-3);
+    --hc-button-hover-border-color: var(--hc-color-$(val)-light-3);
+    --hc-button-active-bg-color: var(--hc-color-$(val)-dark-2);
+    --hc-button-active-border-color: var(--hc-color-$(val)-dark-2);
+    --hc-button-disabled-text-color: var(-- hc-color-white);
+    --hc-button-disabled-bg-color: var(--hc-color-$(val)-light-5);
+    --hc-button-disabled-border-color: var(--hc-color-$(val)-light);
+  }
+  .hc-button--$(val).plain {
+    --hc-button-text-color: var(--hc-color-$(val));
+    --hc-button-bg-color: var(--hc-color-$(val)-light-9);
+    --hc-button-border-color: var(--hc-color-$(val)-light-5);
+    --hc-button-hover-text-color: var(--hc-color-white);
+    --hc-button-hover-bg-color: var(--hc-color-$(val));
+    --hc-button-hover-border-color: var(--hc-color-$(val));
+    --hc-button-active-text-color: var(--hc-color-white);
+  }
+}
+
+.hc-button--large {
+  --hc-button-size: 40px;
+  height: var(--hc-button-size);
+  padding: 12px 19px;
+  font-size: var(--hc-font-size-base);
+  border-radius: var(--hc-border-radius-base);
+}
+.hc-button--small {
+  --hc-button-size: 24px;
+  height: var(--hc-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--hc-border-radius-base) - 1px);
+}
+
+
+
+

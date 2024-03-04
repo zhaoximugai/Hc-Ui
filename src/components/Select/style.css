@@ -1,0 +1,81 @@
+.hc-select {
+    --hc-select-item-hover-bg-color: var(--hc-fill-color-light);
+    --hc-select-item-font-size: var(--hc-font-size-base);
+    --hc-select-item-font-color: var(--hc-text-color-regular);
+    --hc-select-item-selected-font-color: var(--hc-color-primary);
+    --hc-select-item-disabled-font-color: var(--hc-text-color-placeholder);
+    --hc-select-input-focus-border-color: var(--hc-color-primary);
+  }
+  
+  .hc-select {
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    line-height: 32px;
+    .hc-tooltip .hc-tooltip__popper {
+      padding: 0;
+    }
+    .hc-input.focus .hc-input__wrapper {
+      box-shadow: 0 0 0 1px var(--hc-select-input-focus-border-color) inset!important
+    }
+    .hc-input {
+      .header-angle {
+        transition: transform var(--hc-transition-duration);
+        cursor: pointer;
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  
+    .hc-input__inner {
+      cursor: pointer;
+    }
+    .hc-select__nodata, .hc-select__loading{
+      padding: 10px 0;
+      margin: 0;
+      text-align: center;
+      color: var(--hc-text-color-secondary);
+      font-size: var(--hc-select-font-size);
+    }
+    .hc-select__menu {
+      list-style: none;
+      margin: 6px 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .hc-select__menu-item { 
+      margin: 0;
+      font-size: var(--hc-select-item-font-size);
+      padding: 0 32px 0 20px;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--hc-select-item-font-color);
+      height: 34px;
+      line-height: 34px;
+      box-sizing: border-box;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(240, 231, 231);
+
+      }
+      &.is-selected {
+        color: var(--hc-select-item-selected-font-color);
+        font-weight: 700;
+
+      }
+      &.highlighted{
+        background-color: var(--hc-select-item-hover-bg-color);
+      }
+      &.disabled {
+        color: var(--hc-select-item-disabled-font-color);
+        cursor: not-allowed;
+        &:hover {
+          background-color: white;
+        }
+      }
+  
+    }
+  }
