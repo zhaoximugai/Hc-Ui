@@ -1,7 +1,7 @@
 .hc-button {
   --hc-button-font-weight: var(--hc-font-weight-primary);
   --hc-button-border-color: var(--hc-border-color);
-  --hc-button-bg-color: var(-- hc-fill-color-blank);
+  --hc-button-bg-color: var(--hc-fill-color-blank);
   --hc-button-text-color: var(--hc-text-color-regular);
   --hc-button-disabled-text-color: var(--hc-disabled-text-color);
   --hc-button-disabled-bg-color: var(--hc-fill-color-blank);

@@ -30,7 +30,11 @@ export default defineConfig({
     },
     rollupOptions:{
       external:['vue','@fortawesome/free-solid-svg-icons','@fortawesome/fontawesome-svg-core','axios','@popperjs/core'],
+      
       output:{
+        globals:{
+          vue:'Vue'
+        },
         assetFileNames:(chunkInfo)=> {
             if (chunkInfo.name=='style.css') {
               return 'index.css'
